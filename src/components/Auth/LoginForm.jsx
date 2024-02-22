@@ -29,7 +29,7 @@ export function LoginForm() {
 	function Login() {
 		window.event.preventDefault();
 		if (state.userName !== 'Admin' || state.password !== 'root') {
-			setState({ ErrorMessage: true });
+			setState({ userName: '', password: '', ErrorMessage: true });
 		} else {
 			setState({ ErrorMessage: false });
 			router.push('/dashboard');
@@ -42,18 +42,15 @@ export function LoginForm() {
 				<TextInput
 					required
 					label="Kullanıcı Adı"
-					placeholder="Admin"
 					name="userName"
 					value={state.userName}
 					onChange={handleInputChange}
 					error={state.ErrorMessage}
-					autoSave={false}
 					radius={5}
 				/>
 				<PasswordInput
 					required
 					label="Parola"
-					placeholder="Parolanızı giriniz"
 					name="password"
 					value={state.password}
 					onChange={handleInputChange}
@@ -61,19 +58,19 @@ export function LoginForm() {
 					radius={5}
 					mt="md"
 				/>
+				<Notification
+					title="Giriş Başarısız"
+					withCloseButton={false}
+					style={{ display: state.ErrorMessage ? 'block' : 'none' }}
+					color="red"
+					my={20}
+				>
+					Kullanıcı adınızı ve parolayı doğru girdiğinizden emin olun.
+				</Notification>
 				<Button type="submit" fullWidth mt="xl">
 					Giriş Yap
 				</Button>
 			</form>
-			<Notification
-				title="Giriş Başarısız"
-				withCloseButton={false}
-				style={{ display: state.ErrorMessage ? 'block' : 'none' }}
-				color="red"
-				mt={16}
-			>
-				Kullanıcı adınızı ve parolayı doğru girdiğinizden emin olun.
-			</Notification>
 		</Card>
 	);
 }
