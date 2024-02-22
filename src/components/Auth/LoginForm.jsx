@@ -32,7 +32,7 @@ export function LoginForm() {
 			setState({ ErrorMessage: true });
 		} else {
 			setState({ ErrorMessage: false });
-			router.push('/');
+			router.push('/dashboard');
 		}
 	}
 
@@ -47,6 +47,7 @@ export function LoginForm() {
 					value={state.userName}
 					onChange={handleInputChange}
 					error={state.ErrorMessage}
+					autoSave={false}
 					radius={5}
 				/>
 				<PasswordInput

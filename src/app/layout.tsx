@@ -7,7 +7,7 @@ import { Notifications } from '@mantine/notifications';
 import { Analytics } from '@vercel/analytics/react';
 import { inter } from '@/styles/fonts';
 import { theme } from '@/styles/theme';
-import { AppProvider } from './provider';
+import { TanstackProvider } from './provider';
 
 export const metadata = {
 	metadataBase: new URL('https://mantine-admin.vercel.app/'),
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<DirectionProvider>
 					<MantineProvider theme={theme}>
 						<ModalsProvider>
-							<AppProvider>{children}</AppProvider>
+							<TanstackProvider>{children}</TanstackProvider>
 							<Analytics />
 						</ModalsProvider>
 						<Notifications />
