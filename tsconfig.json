@@ -39,7 +39,7 @@
     "**/*.mjs",
     "jest.config.js",
     ".next/types/**/*.ts"
-  ],
+, "src/components/Auth/LoginForm.jsx"  ],
   "exclude": [
     "node_modules"
   ]

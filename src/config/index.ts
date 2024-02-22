@@ -28,10 +28,6 @@ export const navLinks: NavItem[] = [
 				label: 'Login',
 				link: '/login',
 			},
-			{
-				label: 'Register',
-				link: '/register',
-			},
 		],
 	},
 	{

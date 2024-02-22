@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { Flex, Grid, GridCol } from '@mantine/core';
 import { BalanceCard } from './BalanceCard';
